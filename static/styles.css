@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap');
+
+html, body{
+  margin:0; 
+  padding: 0; 
+  height: 100%;
+  font-family: "Azeret Mono", serif;
+  font-style: normal;
+}
+
+#main-text{
+  color: white;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.col-container {
+  display: flex;
+  height: 100vh;
+}
+
+#logo{
+  margin-top: 3rem;
+}
+
+.sidebar {
+  background: #CD0003;
+  width: 360px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;  /* stack children top to bottom */
+  align-items: flex-start; /* keep everything on the left */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+#main-text {
+  /* sits naturally at the top */
+}
+
+.body {
+  flex: 1; /* fills remaining space */
+}
+#bottom {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#brand {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+#contact {
+  color: white;
+  font-size: 0.85rem;
+}
