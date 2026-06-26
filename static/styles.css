@@ -40,6 +40,60 @@ html, body{
 
 .body {
   flex: 1; /* fills remaining space */
+  display: flex;        /* two columns, split in half */
+  height: 100vh;
+}
+
+.column {
+  flex: 1;                          /* each half of the section */
+  height: 100%;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;    /* slideshow scroll */
+  scrollbar-width: none;            /* hide scrollbar */
+}
+
+.column::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  position: relative;      /* anchor for the overlay */
+  height: 100%;            /* container stays full half-height */
+  scroll-snap-align: start;
+  display: grid;
+  place-items: center;     /* image sits smaller, centered */
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.slide img {
+  max-width: 70%;          /* smaller than its container */
+  max-height: 70%;
+  width: auto;
+  height: auto;
+  object-fit: contain;     /* show the whole image, no side cropping */
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;               /* fills the whole half-section container */
+  background: #CD0003;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.slide:hover .overlay {
+  opacity: 1;
+}
+
+.go {
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
 }
 #bottom {
   margin-top: auto;
